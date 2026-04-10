@@ -64,7 +64,7 @@ TIPOS_PROPIEDAD = {
     "triplex":              [8, 11],
     "tríplex":              [8, 11],
     "departamento triplex": [8],
-    # ── Casas ────────────────────────────────────────────
+    # ── Casas ────────────────────────────────────────────────
     "casa":                 [9, 10, 11],
     "casas":                [9, 10, 11],
     "casa duplex":          [10],
@@ -229,7 +229,7 @@ def buscar(
     Retorna
     -------
     list de dicts con: titulo, precio, precio_num, ambientes, direccion, link
-    Ordenados de mayor a menor precio. RESERVADO y EN NEGOCIACIÓN excluidos.
+    Ordenados de mayor a menor precio. RESERVADO y EN NEGOCIACIÔN excluidos.
     """
 
     if tipo_ids is None:
@@ -322,7 +322,7 @@ def buscar(
             else:
                 filtro_loc = "(sin filtro de ubicación)"
             print(f"\n📊 {total_global:,} propiedades encontradas {filtro_loc}.")
-            print(f"   Filtrando RESERVADO y EN NEGOCIACIÓN...\n")
+            print(f"   Filtrando RESERVADO y EN NEGOCIACIÔ�...\n")
 
         # ── Filtrar y acumular ────────────────────────────────
         for listing in items:
@@ -520,8 +520,8 @@ def main():
 
     for i, r in enumerate(resultados, 1):
         print(f"{i:>3}. {r['titulo']}")
-        print(f"      💲 {r['precio']}   🚪 {r['ambientes']} amb.   print(f"      📍 {r['direccion']}")
-        print(f"      print(f"      🔗 {r['link']}")
+        print(f"      💲 {r['precio']}   🚪 {r['ambientes']} amb.   📍 {r['direccion']}")
+        print(f"      🔗 {r['link']}")
         print()
 
     # ── Exportar a txt ───────────────────────────────────────
@@ -535,7 +535,7 @@ def main():
             f.write(
                 f"Barrio: {barrios_raw or '(todos)'}  |  Tipo: {', '.join(tipos_validos)}  |  "
                 f"Ambientes: {ambientes or 'todos'}  |  "
-                f"Presupuesto: {precio_min:,}–{precio_max:,}–{moneda}\n"
+                f"Presupuesto: {precio_min:,}–{precio_max:,} {moneda}\n"
             )
             f.write("Orden: mayor a menor precio | Excluye: RESERVADO, EN NEGOCIACIÓN\n")
             f.write("=" * 65 + "\n\n")
